@@ -1,11 +1,34 @@
 import React from 'react'
 
 const ProductCard = () => {
+
+  //  async function fetchProducts(){
+  //   try {
+  //     const data = await fetch('https://fakestoreapi.com/products')
+  //     const products = await data.json()
+  //     console.log(products);
+
+  //     setProducts(products)
+  //     setLoading(false)
+
+  //   } catch (error) {
+  //     console.log("Error fetching products:", error);
+  //     console.log("==========An error occurred while fetching products.=============");
+
+  //     setLoading(false)
+      
+  //   }
+  // }
+
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
   return (
     <div className='bg-red-500'>
       <div className="max-w-xs mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden font-sans my-5">
       <img
-        src="https://via.placeholder.com/300x200"
+        src=""
         alt="Product"
         className="w-full h-48 object-cover"
       />
@@ -25,3 +48,7 @@ const ProductCard = () => {
 }
 
 export default ProductCard
+
+
+
+
