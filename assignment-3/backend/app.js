@@ -55,7 +55,7 @@ app.post('/todos', (req, res) => {
     res.status(500).json({ error: 'Failed to create todo', details: error.message })
   }
 })
-app.delete('/deleteUser/:id', async(req, res)=>{
+app.delete('/deletetodos/:id', async(req, res)=>{
     const {id} = req.params
     try {
         await User.findByIdAndDelete(id)

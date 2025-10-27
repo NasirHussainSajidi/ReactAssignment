@@ -18,6 +18,19 @@ const Todos = () => {
         }
     }
 
+ async function deleteTodos() {
+        try {
+              const todos = await fetch('http://localhost:3000/deletetodos');
+            const data = await todos.json();
+            setTodos(data);
+
+            console.log("TODOS---->", data);
+
+        } catch (error) {
+            console.error('Error fetching todos:', error);
+        }
+    }
+
     async function addTodo(){
         try {
             const newTodo = {task: 'Learn React Context API', completed: false};
@@ -29,6 +42,7 @@ const Todos = () => {
                 'Content-Type': 'application/json'
             }
         });
+        
 
         const data = await todo.json();
         setTodos((pre) => [...pre, data]);
@@ -74,7 +88,7 @@ const Todos = () => {
                     <button className="text-blue-500 hover:text-blue-700">
                         <span className="material-icons">edit</span>
                     </button>
-                    <button className="text-red-500 hover:text-red-700">
+                    <button onClick={deleteTodos} className="text-red-500 hover:text-red-700">
                         <span className="material-icons">delete</span>
                     </button>
                 </div>
