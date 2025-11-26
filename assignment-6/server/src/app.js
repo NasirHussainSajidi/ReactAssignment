@@ -66,6 +66,22 @@ app.delete('/product/:id', (req, res) => {
     }
 });
 
+app.use('/login', (req, res) => {
+    try {
+        const { username, password } = req.body;
+        if (username === 'admin' && password === 'password') {
+            res.json({ message: 'Login Successful' });
+        } else {
+            res.status(401).json({ message: 'Invalid Credentials' });
+        }
+
+        
+    } catch (error) {
+        res.status(500).json({ message: 'Server Error' });
+        
+    }
+}
+);
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
